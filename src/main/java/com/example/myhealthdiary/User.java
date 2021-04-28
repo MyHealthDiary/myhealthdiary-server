@@ -11,6 +11,10 @@ public class User {
     private int height;
     private double weight;
     private String diabet_type;
+    private int glucoseRangeMax;
+    private int glucoseRangeMin;
+    private int pressureRangeMax;
+    private int pressureRangeMin;
 
     public String getEmail() {
         return email;
@@ -97,5 +101,37 @@ public class User {
                 ", weight=" + weight +
                 ", diabet_type='" + diabet_type + '\'' +
                 '}';
+    }
+
+    public int getGlucoseRangeMax() {
+        return glucoseRangeMax;
+    }
+
+    public void setGlucoseRangeMax(int glucoseRangeMax) {
+        this.glucoseRangeMax = glucoseRangeMax;
+    }
+
+    public int getGlucoseRangeMin() {
+        return glucoseRangeMin;
+    }
+
+    public void setGlucoseRangeMin(int glucoseRangeMin) {
+        this.glucoseRangeMin = glucoseRangeMin;
+    }
+
+    public int getPressureRangeMax() {
+        return pressureRangeMax;
+    }
+
+    public void setPressureRangeMax(int pressureRangeMax) {
+        this.pressureRangeMax = pressureRangeMax;
+    }
+
+    public int getPressureRangeMin() {
+        return pressureRangeMin;
+    }
+
+    public void setPressureRangeMin(int pressureRangeMin) {
+        this.pressureRangeMin = pressureRangeMin;
     }
 }

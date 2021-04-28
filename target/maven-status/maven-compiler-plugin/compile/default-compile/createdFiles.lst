@@ -1,0 +1,9 @@
+com\example\myhealthdiary\HealthData.class
+com\example\myhealthdiary\User.class
+com\example\myhealthdiary\webservices\UserWebservices.class
+com\example\myhealthdiary\database\UserDbData.class
+com\example\myhealthdiary\database\DbConnection.class
+com\example\myhealthdiary\MyhealthdiaryApplication.class
+com\example\myhealthdiary\webservices\HealthdataWebservices.class
+com\example\myhealthdiary\database\HealthDataDbData.class
+com\example\myhealthdiary\database\ChartData.class

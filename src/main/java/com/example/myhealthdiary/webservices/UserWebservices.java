@@ -6,7 +6,6 @@ import com.example.myhealthdiary.database.UserDbData;
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.Connection;
-import java.util.List;
 
 @RestController
 public class UserWebservices {
@@ -49,7 +48,11 @@ public class UserWebservices {
             @RequestParam(value = "gender", defaultValue = "") String gender,
             @RequestParam(value = "height") int height,
             @RequestParam(value = "weight") double weight,
-            @RequestParam(value = "diabet_type", defaultValue = "") String diabet_type) {
+            @RequestParam(value = "diabet_type", defaultValue = "") String diabet_type,
+            @RequestParam(value = "glucosemax") int glucoseRangeMax,
+            @RequestParam(value = "glucosemin") int glucoseRangeMin,
+            @RequestParam(value = "pressuremax") int pressureRangeMax,
+            @RequestParam(value = "pressuremin") int pressureRangeMin) {
         initDb();
         User newUser = new User();
         if (email.equals("0") || password.equals("0")) {
@@ -65,6 +68,10 @@ public class UserWebservices {
             newUser.setHeight(height);
             newUser.setWeight(weight);
             newUser.setDiabet_type(diabet_type);
+            newUser.setGlucoseRangeMax(glucoseRangeMax);
+            newUser.setGlucoseRangeMin(glucoseRangeMin);
+            newUser.setPressureRangeMax(pressureRangeMax);
+            newUser.setPressureRangeMin(pressureRangeMin);
             userDbData.createUser(newUser);
             return newUser;
         }

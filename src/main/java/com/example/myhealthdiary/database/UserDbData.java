@@ -35,6 +35,10 @@ public class UserDbData {
             user.setHeight(resultSet.getInt(8));
             user.setWeight(resultSet.getDouble(9));
             user.setDiabet_type(resultSet.getString(10));
+            user.setGlucoseRangeMax(resultSet.getInt(11));
+            user.setGlucoseRangeMin(resultSet.getInt(12));
+            user.setPressureRangeMax(resultSet.getInt(13));
+            user.setGlucoseRangeMin(resultSet.getInt(14));
             return user;
         } catch (Exception e) {
             e.printStackTrace();
@@ -59,6 +63,10 @@ public class UserDbData {
             user.setHeight(resultSet.getInt(8));
             user.setWeight(resultSet.getDouble(9));
             user.setDiabet_type(resultSet.getString(10));
+            user.setGlucoseRangeMax(resultSet.getInt(11));
+            user.setGlucoseRangeMin(resultSet.getInt(12));
+            user.setPressureRangeMax(resultSet.getInt(13));
+            user.setGlucoseRangeMin(resultSet.getInt(14));
             return user;
         } catch (Exception e) {
             e.printStackTrace();
@@ -68,7 +76,7 @@ public class UserDbData {
 
     public void createUser(User newUser) {
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO public.user(email, password, firstname, lastname, birthdate, gender, height, weight, diabet_type) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);");
+            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO public.user(email, password, firstname, lastname, birthdate, gender, height, weight, diabet_type, glucoseRangeMax, glucoseRangeMin, pressureRangeMax, pressureRangeMin) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);");
             preparedStatement.setString(1, newUser.getEmail());
             preparedStatement.setString(2, newUser.getPassword());
             preparedStatement.setString(3, newUser.getFirstname());
@@ -78,6 +86,10 @@ public class UserDbData {
             preparedStatement.setInt(7, newUser.getHeight());
             preparedStatement.setDouble(8, newUser.getWeight());
             preparedStatement.setString(9, newUser.getDiabet_type());
+            preparedStatement.setInt(10, newUser.getGlucoseRangeMax());
+            preparedStatement.setInt(11, newUser.getGlucoseRangeMin());
+            preparedStatement.setInt(12, newUser.getPressureRangeMax());
+            preparedStatement.setInt(13, newUser.getPressureRangeMin());
             int resultSet = preparedStatement.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();
@@ -101,6 +113,10 @@ public class UserDbData {
             user.setHeight(resultSet.getInt(8));
             user.setWeight(resultSet.getDouble(9));
             user.setDiabet_type(resultSet.getString(10));
+            user.setGlucoseRangeMax(resultSet.getInt(11));
+            user.setGlucoseRangeMin(resultSet.getInt(12));
+            user.setPressureRangeMax(resultSet.getInt(13));
+            user.setGlucoseRangeMin(resultSet.getInt(14));
             return user;
         } catch (Exception e) {
             e.printStackTrace();
